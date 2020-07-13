@@ -1,7 +1,7 @@
 {
-  "name": "Real State",
+  "name": "RealState",
   "version": "1.0.0",
-  "description": "GRID STATE",
+  "description": "GRID-STATE",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",

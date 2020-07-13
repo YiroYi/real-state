@@ -35,16 +35,12 @@ body {
 }
 
 .container {
-  & > * {
-    padding: 40px;
-    font-size: 3rem;
-  }
   display: grid;
   grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
   //min content van a tomar la altura del contenido
   // repeat(3, min-content) las siguientes 3 columnas van a tomar
   // el tamano de la altura.
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem 1fr) [full-start]; // crea 8 columnas,
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem, 1fr) [full-end]; // crea 8 columnas,
   // que sean del mismo tamano (1fr);
   //14 es para dejar fijo el tamano de las columnas
   //8rem 1fr repeat(8,minmax(min-content, 14rem)) 1fr

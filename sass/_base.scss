@@ -13,3 +13,43 @@ $color-grey-dark-2: #6D5D4B;
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing:inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  & > * {
+    padding: 40px;
+    font-size: 3rem;
+  }
+  display: grid;
+  grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
+  //min content van a tomar la altura del contenido
+  // repeat(3, min-content) las siguientes 3 columnas van a tomar
+  // el tamano de la altura.
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem 1fr) [full-start]; // crea 8 columnas,
+  // que sean del mismo tamano (1fr);
+  //14 es para dejar fijo el tamano de las columnas
+  //8rem 1fr repeat(8,minmax(min-content, 14rem)) 1fr
+  // el 8rem es la columna que queremos para el navbar, los dos 1fr son columnas invisibles
+  // para centrar nuestro objecto de 8 columnas repeat(8,minmax(min-content, 14rem))
+  //minmax(6rem 1fr) esto dice que el maximo es 1 fr se puede hacer mas pequeno
+  //pero cuando llegue a 6rem va a dejar de shrink de encojerse.
+}
